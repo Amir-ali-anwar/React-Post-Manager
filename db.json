@@ -1,0 +1,69 @@
+{
+  "posts": [
+    {
+      "id": "c9de",
+      "title": "node",
+      "likes": 13,
+      "like": 1
+    },
+    {
+      "id": "a1b2",
+      "title": "react",
+      "likes": 25,
+      "like": 0
+    },
+    {
+      "id": "f3c4",
+      "title": "vue",
+      "likes": 17,
+      "like": 1
+    },
+    {
+      "id": "e5d6",
+      "title": "angular",
+      "likes": 8,
+      "like": 0
+    },
+    {
+      "id": "g7h8",
+      "title": "nextjs",
+      "likes": 30,
+      "like": 1
+    },
+    {
+      "id": "i9j0",
+      "title": "express",
+      "likes": 14,
+      "like": 1
+    },
+    {
+      "id": "k1l2",
+      "title": "nestjs",
+      "likes": 19,
+      "like": 0
+    },
+    {
+      "id": "m3n4",
+      "title": "graphql",
+      "likes": 12,
+      "like": 1
+    },
+    {
+      "id": "o5p6",
+      "title": "mongodb",
+      "likes": 20,
+      "like": 0
+    },
+    {
+      "id": "q7r8",
+      "title": "firebase",
+      "likes": 22,
+      "like": 1
+    },
+    {
+      "id": "6523",
+      "title": "new post title",
+      "likes": 0
+    }
+  ]
+}
