@@ -17,7 +17,7 @@ const App = () => {
     return () => {
         
     }
-  }, [posts])
+  }, [])
   
   return (
     <div className="max-w-3xl mx-auto mt-10 p-4">

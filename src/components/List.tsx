@@ -1,11 +1,21 @@
-import React from 'react'
+import {type Post} from '../hooks/usePost'
+import Item from './Item';
+type ListProps = {
+  posts: Post[];
+  onLike: (postId: string) => Promise<void>;
+  onDelete: (postId: string) => Promise<void>;
+};
 
-type Props = {}
-
-const List = (props: Props) => {
+const List = ({posts,onDelete,onLike}: ListProps) => {
   return (
-    <div>List</div>
-  )
+    <div className='space-y-4'>
+      {posts.map((post) => {
+        return (
+          <Item key={post.id} post={post} onLike={onLike} onDelete={onDelete} />
+        );
+      })}
+    </div>
+  );
 }
 
 export default List

@@ -1,7 +1,7 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import  { ChangeEvent, FormEvent, useState } from 'react'
 
 type FormProps = {
-  onsubmit:(data:{title:string,likes:string})=> Promise<void>
+  onSubmit:(data:{title:string,likes:number})=> Promise<void>
 }
 
 const Form = ({onSubmit}:FormProps) => {
@@ -9,6 +9,7 @@ const Form = ({onSubmit}:FormProps) => {
   const handleSubmit=(e:FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     onSubmit({title,likes:0})
+    setTitle('')
 
   }
   const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
