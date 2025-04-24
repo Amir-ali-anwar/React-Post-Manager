@@ -13,30 +13,34 @@ const API_URL = 'http://localhost:4000/posts'
 export const usePosts = () => {
     const [posts, setPosts] = useState<Post[]>([])
     const [error, setError] = useState<string>('')
-
+    const [loading, setLoading] = useState<boolean>(false);
     const fetchPosts = async (): Promise<void> => {
+        setLoading(true);
         try {
             const { data } = await axios(API_URL)
             setPosts(data)
         } catch (error) {
             setError("Failed to Fetch the data")
+        } finally {
+            setLoading(false);
         }
     }
     const handleCreatePost = async (postData: Post): Promise<void> => {
         try {
-            await axios.post(API_URL, {
-                ...postData
-            })
+            await axios.post(API_URL, { ...postData });
+            await fetchPosts(); // Add this
         } catch (error) {
             setError("Failed to Create the data")
         }
     }
-    const handleDeletePost = async (postId: postWithOutId): Promise<void> => {
+    const handleDeletePost = async (postId: string): Promise<void> => {
         try {
             await axios.delete(`${API_URL}/${postId}`);
             await fetchPosts()
         } catch (error) {
             setError("Failed to Delete post")
+        } finally {
+            setLoading(false);
         }
     }
     const handleLike = async (postId: string): Promise<void> => {
@@ -50,13 +54,17 @@ export const usePosts = () => {
                 ...post,
                 likes: post.likes + 1
             })
+            console.log({ response });
+
             await fetchPosts()
             setError('');
         } catch (error) {
             setError('Failed to like post');
+        } finally {
+            setLoading(false);
         }
     }
     return {
-        posts,error,fetchPosts,handleCreatePost,handleDeletePost,handleLike
+        loading,posts, error, fetchPosts, handleCreatePost, handleDeletePost, handleLike
     }
 }
