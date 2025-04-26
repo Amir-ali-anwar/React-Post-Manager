@@ -13,4 +13,12 @@ describe("App", () => {
     expect(await screen.findByText(/second post/i)).toBeInTheDocument();
     // expect(await screen.findByText(/third post/i)).toBeInTheDocument();
   });
+  test('creates a new post', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    // const { input, submitBtn } = getFormElements();
+    await user.type(input, 'New Post');
+    await user.click(submitBtn);
+    expect(await screen.findByText(/new post/i)).toBeInTheDocument();
+  });
 });
