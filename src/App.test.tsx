@@ -7,12 +7,12 @@ describe("App", () => {
     render(<App />);
     expect(screen.getByText(/posts manager/i)).toBeInTheDocument();
   });
-  // test('fetches posts on mount', async () => {
-  //   render(<App />);
-  //   expect(await screen.findByText(/first post/i)).toBeInTheDocument();
-  //   expect(await screen.findByText(/second post/i)).toBeInTheDocument();
-  //   // expect(await screen.findByText(/third post/i)).toBeInTheDocument();
-  // });
+  test('fetches posts on mount', async () => {
+    render(<App />);
+    expect(await screen.findByText(/first post/i)).toBeInTheDocument();
+    expect(await screen.findByText(/second post/i)).toBeInTheDocument();
+    // expect(await screen.findByText(/third post/i)).toBeInTheDocument();
+  });
   // test('create a new post', async () => {
   //    const user= userEvent.setup()
   //     render(<App />);

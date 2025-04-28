@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 export type Post = {
-    id: string
+    id?: string
     title: string,
     likes: number
 }
