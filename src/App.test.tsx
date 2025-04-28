@@ -13,5 +13,9 @@ describe("App", () => {
     expect(await screen.findByText(/second post/i)).toBeInTheDocument();
     // expect(await screen.findByText(/third post/i)).toBeInTheDocument();
   });
-
+  test('create a new post', async () => {
+     const user= userEvent.setup()
+      render(<App />);
+          
+  })
 });
