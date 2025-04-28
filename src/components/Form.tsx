@@ -30,7 +30,6 @@ const Form = ({onSubmit}:FormProps) => {
       className='p-2 border rounded mr-2 w-64'
       required
     />
-    <img src="" alt="" decoding='async' />
     <button
       type='submit'
       className='px-4 py-2 bg-teal-500 text-white rounded'
