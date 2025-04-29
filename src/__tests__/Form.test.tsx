@@ -19,7 +19,17 @@ describe('Form Component', () => {
     })
     test('Renders Form Elements correctly',()=>{
         const {input,button}= getFormElements()
-        expect(input).toBeInTheDocument()
+        expect(input).toHaveValue('')
         expect(button).toBeInTheDocument()
     })
+    test('Updates Input value on change', async()=>{
+        const { input, button } = getFormElements();
+        await user.type(input,'Test Post')
+        expect(input).toHaveValue('Test Post')
+        await user.click(button)
+        expect(input).toHaveValue('')
+
+    })  
+
+
 })
