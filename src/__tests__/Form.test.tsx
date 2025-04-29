@@ -28,8 +28,17 @@ describe('Form Component', () => {
         expect(input).toHaveValue('Test Post')
         await user.click(button)
         expect(input).toHaveValue('')
-
-    })  
-
+        
+      })  
+      test('Form Data validation after the form Submission', async()=>{
+        const { input, button } = getFormElements();
+        await user.type(input,'Test Post')
+        await user.click(button)
+        expect(mockOnSubmit).toHaveBeenCalledWith({
+          title:'Test Post',
+          likes:0
+        })
+        
+    })
 
 })
