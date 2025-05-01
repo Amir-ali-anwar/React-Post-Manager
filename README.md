@@ -26,5 +26,7 @@
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Amir-ali-anwar/React-Post-Manager
+
+cd React-Post-Manager
+
